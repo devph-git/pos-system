@@ -6,12 +6,12 @@
 
 <script>
 export default {
-  name: 'dashboardIntroImage'
+  name: 'DashboardIntroImage'
 }
 </script>
 
 <style scoped>
 .dashboard-image > img {
-  width: 400px;
+  width: 450px;
 }
 </style>
