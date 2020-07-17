@@ -31,7 +31,6 @@
         @click:append="show1 = !show1"
       />
       <!--  -->
-      <!-- <input v-model="userInfo.password" type="password" placeholder="Password"> -->
       <v-row class="pa-2 ma-0">
         <v-checkbox class="ma-0 pa-0" label="Remember me" />
         <v-spacer />
@@ -124,6 +123,5 @@ export default {
 }
 .community-name {
   margin-top: 20%;
-  text-shadow: 2px 2px 3px #000000;
 }
 </style>

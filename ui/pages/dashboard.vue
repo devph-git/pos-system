@@ -14,6 +14,9 @@
       <v-container>
         <sparklines />
       </v-container>
+      <v-container>
+        <BestSellingProduct />
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -23,13 +26,15 @@ import introforcontent from '@/components/introforcontent'
 import navigationDrawer from '@/components/navigationDrawer'
 import graphcontent from '@/components/graphcontent'
 import sparklines from '@/components/sparklines'
+import BestSellingProduct from '@/components/BestSellingProduct'
 
 export default {
   components: {
     navigationDrawer,
     introforcontent,
     graphcontent,
-    sparklines
+    sparklines,
+    BestSellingProduct
   },
   head () {
     return {
