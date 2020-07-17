@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # withVuetify
+=======
+# withjest
+>>>>>>> error/41493137/sparkline-component
 
 ## Build Setup
 
