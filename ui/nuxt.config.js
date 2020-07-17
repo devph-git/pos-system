@@ -16,13 +16,8 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-<<<<<<< HEAD
-    // titleTemplate: '%s - ' + process.env.npm_package_name,
-    // title: process.env.npm_package_name || '',
-=======
-    titleTemplate: '%s - ' + process.env.npm_package_name,
+    // titleTemplate: '%s -dsad ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
->>>>>>> error/41493137/sparkline-component
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -97,11 +92,6 @@ export default {
   */
   build: {
   },
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> error/41493137/sparkline-component
   auth: {
     strategies: {
       local: {

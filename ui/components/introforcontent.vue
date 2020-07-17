@@ -1,8 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div>
-    <dashboardIntroImage />
-=======
   <div class="container">
     <v-hover>
       <template v-slot="{ hover }">
@@ -27,7 +23,6 @@
         </v-card>
       </template>
     </v-hover>
->>>>>>> error/41493137/sparkline-component
   </div>
 </template>
 
@@ -35,18 +30,12 @@
 import dashboardIntroImage from './dashboardIntroImage'
 
 export default {
-<<<<<<< HEAD
-  name: 'contentIntro',
-=======
   name: 'ContentIntro',
->>>>>>> error/41493137/sparkline-component
   components: {
     dashboardIntroImage
   }
 }
 </script>
-<<<<<<< HEAD
-=======
 
 <style lang="scss" scoped>
 .container {
@@ -54,4 +43,3 @@ export default {
   color: #2c2c54;
 }
 </style>
->>>>>>> error/41493137/sparkline-component

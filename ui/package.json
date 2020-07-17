@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "withVuetify",
-=======
   "name": "pos-system",
->>>>>>> error/41493137/sparkline-component
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -13,12 +9,8 @@
     "export": "nuxt export",
     "serve": "nuxt serve",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-<<<<<<< HEAD
-    "lint": "npm run lint:js"
-=======
     "lint": "npm run lint:js",
     "test": "jest"
->>>>>>> error/41493137/sparkline-component
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.9.1",
@@ -30,11 +22,6 @@
     "@nuxtjs/eslint-config": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/vuetify": "^1.11.2",
-<<<<<<< HEAD
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.2.0",
-    "eslint-plugin-nuxt": "^1.0.0"
-=======
     "@vue/test-utils": "^1.0.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
@@ -43,6 +30,5 @@
     "eslint-plugin-nuxt": "^1.0.0",
     "jest": "^26.0.1",
     "vue-jest": "^3.0.4"
->>>>>>> error/41493137/sparkline-component
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="$auth.loggedIn">
+    <div v-if="false">
       <!-- LOGGED IN -->
     </div>
     <div v-else class="loginPage">

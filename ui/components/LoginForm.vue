@@ -14,11 +14,7 @@
         hint="At least 8 characters"
         prepend-inner-icon="mdi-account"
         @click:append="show1 = !show1"
-<<<<<<< HEAD
-      ></v-text-field>
-=======
       />
->>>>>>> error/41493137/sparkline-component
       <!--  -->
       <!-- PASSWORD INPUT -->
       <v-text-field
@@ -33,32 +29,15 @@
         counter
         prepend-inner-icon="mdi-lock"
         @click:append="show1 = !show1"
-<<<<<<< HEAD
-      ></v-text-field>
-      <!--  -->
-      <!-- <input v-model="userInfo.password" type="password" placeholder="Password"> -->
-      <v-row class="pa-2 ma-0">
-        <v-checkbox class="ma-0 pa-0" label="Remember me"></v-checkbox>
-=======
       />
       <!--  -->
       <v-row class="pa-2 ma-0">
         <v-checkbox class="ma-0 pa-0" label="Remember me" />
->>>>>>> error/41493137/sparkline-component
         <v-spacer />
         <span>Forgot password?</span>
       </v-row>
       <v-btn
         block
-<<<<<<< HEAD
-        :disabled="this.userInfo.username.length > 8 && this.userInfo.password.length > 8 ? false : true"
-        :depressed="this.userInfo.username.length > 8 && this.userInfo.password.length > 8 ? false : true"
-        type="submit"
-        color="#3889BE"
-        :dark="this.userInfo.username.length > 8 && this.userInfo.password.length > 8 ? true : false">
-          LOGIN
-        </v-btn>
-=======
         :disabled="userInfo.username.length > 8 && userInfo.password.length > 8 ? false : true"
         :depressed="userInfo.username.length > 8 && userInfo.password.length > 8 ? false : true"
         type="submit"
@@ -67,7 +46,6 @@
       >
         LOGIN
       </v-btn>
->>>>>>> error/41493137/sparkline-component
       <div class="center">
         <span>Don't have an account? Sign up</span>
       </div>
@@ -100,17 +78,10 @@ export default {
   methods: {
     async getData () {
       try {
-<<<<<<< HEAD
-        const response = await this.$auth.loginWith('local', { data: this.login })
-        console.log(response)
-      } catch (err) {
-        console.log(err)
-=======
-        await this.$auth.loginWith('local', { data: this.login })
+        await this.$auth.loginWith('local', { data: this.userInfo })
         // console.log(response)
       } catch (err) {
         // console.log(err)
->>>>>>> error/41493137/sparkline-component
       }
     }
   }
@@ -152,9 +123,5 @@ export default {
 }
 .community-name {
   margin-top: 20%;
-<<<<<<< HEAD
-  text-shadow: 2px 2px 3px #000000;
-=======
->>>>>>> error/41493137/sparkline-component
 }
 </style>

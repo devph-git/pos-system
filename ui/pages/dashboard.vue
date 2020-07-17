@@ -4,23 +4,6 @@
     <v-app-bar app>
       <!-- -->
     </v-app-bar>
-<<<<<<< HEAD
-
-    <!-- Sizes your content based upon application components -->
-    <v-main>
-
-      <!-- Provides the application the proper gutter -->
-      <v-container fluid>
-
-        <!-- If using vue-router -->
-        <introforcontent />
-      </v-container>
-    </v-main>
-
-    <v-footer app>
-      <!-- -->
-    </v-footer>
-=======
     <v-main>
       <v-container fluid>
         <introforcontent />
@@ -35,31 +18,23 @@
         <BestSellingProduct />
       </v-container>
     </v-main>
->>>>>>> error/41493137/sparkline-component
   </v-app>
 </template>
 
 <script>
 import introforcontent from '@/components/introforcontent'
 import navigationDrawer from '@/components/navigationDrawer'
-<<<<<<< HEAD
-=======
 import graphcontent from '@/components/graphcontent'
 import sparklines from '@/components/sparklines'
 import BestSellingProduct from '@/components/BestSellingProduct'
->>>>>>> error/41493137/sparkline-component
 
 export default {
   components: {
     navigationDrawer,
-<<<<<<< HEAD
-    introforcontent
-=======
     introforcontent,
     graphcontent,
     sparklines,
     BestSellingProduct
->>>>>>> error/41493137/sparkline-component
   },
   head () {
     return {
