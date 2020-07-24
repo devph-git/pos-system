@@ -254,5 +254,19 @@ class ItemsController extends Controller
       return response()->json($response['data'],$response['statusCode']);
    }
 
+   public function searchItem(Request $request)
+   {
+       $response = $this->itemsRepository->search($request);
+       return response()->json($response['data'],$response['statusCode']);
+   }
+
+   public function calculateDiscount(int $id)
+   {
+     $response = $this->itemsRepository->discount($id);
+     return response()->json($response['data'],$response['statusCode']);
+   }
+   
+
+
 
 }

@@ -10,7 +10,8 @@ interface TransactionRepositoryInterface{
     public function create(Request $request);
     public function update(Request $request, int $id);
     public function delete(int $id);
-    
+    public function totalPrice(int $id);
+    public function search(Request $request);
 }
 
 

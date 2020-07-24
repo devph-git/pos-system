@@ -8,5 +8,10 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 
-    
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->artisan('passport:install');
+    }
+
 }

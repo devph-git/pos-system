@@ -267,4 +267,11 @@ class TransactionsController extends Controller
         $response = $this->TransactionRepository->delete($id);
         return response()->json($response['data'],$response['statusCode']);
     }
+    
+    public function totalAmount(int $id)
+    {
+        $response = $this->TransactionRepository->totalPrice($id);
+        return response()->json($response['data'],$response['statusCode']);
+    }
+    
 }
