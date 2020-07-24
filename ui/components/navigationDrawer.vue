@@ -2,14 +2,16 @@
   <v-navigation-drawer :color="'drawerColor'" app permanent>
     <!--NAV DRAWER -->
     <v-list class="navList mt-5">
-      <v-list-item>
+      <v-list-item :class="currentPage==='dashboard'?'clicked':''" @click.prevent="">
         <v-list-item-icon>
           <v-icon v-text="icon" />
         </v-list-item-icon>
         <v-list-item-content>
-          <v-list-item-title class="title">
-            Dashboard
-          </v-list-item-title>
+          <nuxt-link to="/dashboard">
+            <v-list-item-title class="title">
+              Dashboard
+            </v-list-item-title>
+          </nuxt-link>
         </v-list-item-content>
       </v-list-item>
       <v-list-group
@@ -26,22 +28,36 @@
         </template>
 
         <v-list-item
-          v-for="subItem in item.items"
-          :key="subItem.title"
-          class="ml-5"
+          class="ml-3"
+          :class="currentPage==='add-new-category'?'clicked':''"
           @click.prevent=""
         >
-          <v-list-item-content>
-            <v-list-item-title v-text="subItem.title" />
-          </v-list-item-content>
+          <nuxt-link to="/add-new-category">
+            <v-list-item-content>
+              <v-list-item-title v-text="item.add_new_category.title" />
+            </v-list-item-content>
+          </nuxt-link>
+        </v-list-item>
+        <v-list-item
+          class="ml-3"
+          :class="currentPage==='view-category-list'?'clicked':''"
+          @click.prevent=""
+        >
+          <nuxt-link to="/view-category-list">
+            <v-list-item-content>
+              <v-list-item-title v-text="item.view_category_list.title" />
+            </v-list-item-content>
+          </nuxt-link>
         </v-list-item>
       </v-list-group>
-      <v-list-item @click.prevent="">
+      <v-list-item :class="currentPage==='product'?'clicked':''" @click.prevent="">
         <v-list-item-icon>
           <v-icon v-text="nav.product.icon" />
         </v-list-item-icon>
         <v-list-item-content>
-          <v-list-item-title v-text="nav.product.title" />
+          <nuxt-link to="/product">
+            <v-list-item-title v-text="nav.product.title" />
+          </nuxt-link>
         </v-list-item-content>
       </v-list-item>
       <v-list-item @click.prevent="">
@@ -59,6 +75,7 @@
 <script>
 export default {
   name: 'NavigationDrawer',
+  props: ['currentPage'],
   data () {
     return {
       icon: 'mdi-account',
@@ -68,10 +85,12 @@ export default {
             action: 'mdi-account',
             title: 'Categories',
             active: true,
-            items: [
-              { title: 'List Item' },
-              { title: 'List Item' }
-            ]
+            add_new_category: {
+              title: 'Add New Category'
+            },
+            view_category_list: {
+              title: 'View Category List'
+            }
           }
         ],
         product: {
@@ -94,5 +113,12 @@ export default {
     *, ::before, ::after {
       color: rgb(255, 255, 255);
     }
+    a:link {
+      text-decoration: none ;
+    }
+  }
+  .clicked {
+    background-color: #191933;
+    color: '#ffffff'
   }
 </style>

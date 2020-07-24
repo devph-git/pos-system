@@ -2,9 +2,10 @@
   <div>
     <div v-if="false">
       <!-- LOGGED IN -->
+      <!-- Dashboard should put here -->
     </div>
     <div v-else class="loginPage">
-      <!-- LOGGING IN -->
+      <!-- LOGGED OUT -->
       <LoginImage />
       <LoginForm />
     </div>

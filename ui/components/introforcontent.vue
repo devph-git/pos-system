@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import dashboardIntroImage from './dashboardIntroImage'
+import DashboardIntroImage from './DashboardIntroImage'
 
 export default {
-  name: 'ContentIntro',
+  name: 'Introforcontent',
   components: {
-    dashboardIntroImage
+    DashboardIntroImage
   }
 }
 </script>

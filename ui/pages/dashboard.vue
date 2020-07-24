@@ -1,18 +1,18 @@
 <template>
   <v-app>
-    <navigationDrawer />
+    <NavigationDrawer :current-page="'dashboard'" />
     <v-app-bar app>
       <!-- -->
     </v-app-bar>
-    <v-main>
+    <v-main class="bgColor">
       <v-container fluid>
-        <introforcontent />
+        <Introforcontent />
       </v-container>
       <v-container>
-        <graphcontent />
+        <Graphcontent />
       </v-container>
       <v-container>
-        <sparklines />
+        <Sparklines />
       </v-container>
       <v-container>
         <BestSellingProduct />
@@ -22,18 +22,18 @@
 </template>
 
 <script>
-import introforcontent from '@/components/introforcontent'
-import navigationDrawer from '@/components/navigationDrawer'
-import graphcontent from '@/components/graphcontent'
-import sparklines from '@/components/sparklines'
+import Introforcontent from '@/components/Introforcontent'
+import NavigationDrawer from '@/components/NavigationDrawer'
+import Graphcontent from '@/components/Graphcontent'
+import Sparklines from '@/components/Sparklines'
 import BestSellingProduct from '@/components/BestSellingProduct'
 
 export default {
   components: {
-    navigationDrawer,
-    introforcontent,
-    graphcontent,
-    sparklines,
+    NavigationDrawer,
+    Introforcontent,
+    Graphcontent,
+    Sparklines,
     BestSellingProduct
   },
   head () {
@@ -49,5 +49,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.bgColor {
+  background-color: #ebeff3;
+}
 </style>

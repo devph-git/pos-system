@@ -29,6 +29,7 @@
 
 <script>
 export default {
+  name: 'Sparklines',
   data () {
     return {
       showLabels: true,
