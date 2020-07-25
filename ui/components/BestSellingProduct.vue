@@ -55,7 +55,7 @@
 
 <script>
 export default {
-  name: 'BestSellingProduct',
+  name: 'bestsellingproduct',
   data () {
     return {
       desserts: [

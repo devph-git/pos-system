@@ -1,16 +1,16 @@
 <template>
   <v-app>
-    <NavigationDrawer :current-page="'product'" />
+    <navigationdrawer :current-page="'product'" />
     <v-app-bar app>
       <!-- -->
     </v-app-bar>
     <v-main class="bgColor">
       <v-container class="row mx-auto" fluid>
         <div class="col-7">
-          <displayProduct />
+          <displayproduct />
         </div>
         <div class="col-5">
-          <Order />
+          <order />
         </div>
       </v-container>
     </v-main>
@@ -18,15 +18,15 @@
 </template>
 
 <script>
-import NavigationDrawer from '@/components/NavigationDrawer'
-import displayProduct from '@/components/displayProduct'
-import Order from '@/components/Order'
+import navigationdrawer from '@/components/navigationdrawer'
+import displayproduct from '@/components/displayproduct'
+import order from '@/components/order'
 
 export default {
   components: {
-    NavigationDrawer,
-    displayProduct,
-    Order
+    navigationdrawer,
+    displayproduct,
+    order
   },
   head () {
     return {

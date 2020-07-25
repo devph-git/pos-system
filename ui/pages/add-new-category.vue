@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <NavigationDrawer :current-page="'add-new-category'" />
+    <navigationdrawer :current-page="'add-new-category'" />
     <v-app-bar app>
       <!-- -->
     </v-app-bar>
@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import NavigationDrawer from '@/components/NavigationDrawer'
+import navigationdrawer from '@/components/navigationdrawer'
 
 export default {
   components: {
-    NavigationDrawer
+    navigationdrawer
   },
   head () {
     return {

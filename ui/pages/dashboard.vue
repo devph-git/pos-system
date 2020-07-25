@@ -1,40 +1,40 @@
 <template>
   <v-app>
-    <NavigationDrawer :current-page="'dashboard'" />
+    <navigationdrawer :current-page="'dashboard'" />
     <v-app-bar app>
       <!-- -->
     </v-app-bar>
     <v-main class="bgColor">
       <v-container fluid>
-        <Introforcontent />
+        <introforcontent />
       </v-container>
       <v-container>
-        <Graphcontent />
+        <graphcontent />
       </v-container>
       <v-container>
-        <Sparklines />
+        <sparklines />
       </v-container>
       <v-container>
-        <BestSellingProduct />
+        <bestsellingproduct />
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Introforcontent from '@/components/Introforcontent'
-import NavigationDrawer from '@/components/NavigationDrawer'
-import Graphcontent from '@/components/Graphcontent'
-import Sparklines from '@/components/Sparklines'
-import BestSellingProduct from '@/components/BestSellingProduct'
+import introforcontent from '@/components/introforcontent'
+import navigationdrawer from '@/components/navigationdrawer'
+import graphcontent from '@/components/graphcontent'
+import sparklines from '@/components/sparklines'
+import bestsellingproduct from '@/components/bestsellingproduct'
 
 export default {
   components: {
-    NavigationDrawer,
-    Introforcontent,
-    Graphcontent,
-    Sparklines,
-    BestSellingProduct
+    navigationdrawer,
+    introforcontent,
+    graphcontent,
+    sparklines,
+    bestsellingproduct
   },
   head () {
     return {
