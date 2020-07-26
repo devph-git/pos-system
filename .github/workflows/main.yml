@@ -25,20 +25,11 @@ jobs:
         npm run lint
         npm run test
   
+  # NOTE: 
+  # - mysql is already included in ubuntu-latest
+  # - ref: https://github.com/actions/virtual-environments/blob/master/images/linux/Ubuntu2004-README.md
   test_BE:
     runs-on: ubuntu-latest
-    # services:
-    #   mysql:
-    #     image: mysql:5.7
-    #     env:
-    #       MYSQL_ALLOW_EMPTY_PASSWORD: yes
-    #       MYSQL_ROOT_PASSWORD: supersecret
-    #       MYSQL_DATABASE: point_of_sales
-    #       MYSQL_USER: root
-    #       MYSQL_PASSWORD: supersecret
-    #     ports:
-    #       - 3306:3306
-    #     options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
     steps:
     - name: Checkout source
       uses: actions/checkout@v2
@@ -50,6 +41,7 @@ jobs:
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: |
         cd ./api
+        sudo systemctl start mysql.service
         mysql -uroot -proot -e "CREATE DATABASE point_of_sales;"
         php artisan key:generate
         php artisan migrate
