@@ -26,9 +26,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','user_id'
     ];
-
+   
+    protected $primaryKey ='user_id';
     /**
      * The attributes that should be cast to native types.
      *
@@ -37,4 +38,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function items()
+    {
+        return $this->hasMany(Items::class,'user_id');
+    }
+    public function transactions()
+    {
+        return $this->hasMany(Transactions::class,'user_id');
+    }
 }

@@ -4,15 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Transaction_items extends Model
+class Discount extends Model
 {
     protected $fillable =[
-      'transaction_id','user_id','item_id','quantity',
+      'title','percent'
     ];
 
     protected $hidden =[
-       'id','created_at',
+    'id','created_at','updated_at','deleted_at',
     ];
-
-
 }

@@ -76,11 +76,10 @@ class UserTest extends TestCase
             "password" => "jerico005",
         ];
 
-        $this->json('POST', 'api/login', $userData, ['Accept' => 'application/json'])
+        return $this->json('POST', 'api/login', $userData, ['Accept' => 'application/json'])
             ->assertStatus(200)
             ->assertJsonStructure([
                 "user" => [
-                    'id',
                     'name',
                     'email',
                     'created_at',
@@ -90,5 +89,6 @@ class UserTest extends TestCase
                 "message"
             ]);
     }
-  
+
+    
 }

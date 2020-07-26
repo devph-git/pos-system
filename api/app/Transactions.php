@@ -14,4 +14,10 @@ class Transactions extends Model
     protected $hidden = [
      'updated_at','deleted_at',
     ];
+       
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

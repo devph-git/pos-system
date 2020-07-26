@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
 Route::post('logout', 'UserController@logout');
-//items
-
+Route::get('getItems/{id}','ItemsController@calculateDiscount');
+Route::get('transaction/total_price/{id}','TransactionsController@totalAmount');
+Route::post('transaction/search','ItemsController@searchItem');
 
 Route::group(['middleware' => 'auth:api'], function(){
  //user   
