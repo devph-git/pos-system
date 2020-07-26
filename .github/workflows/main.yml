@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Sanitize BE and FE
+
+# Trigger jobs on...
+on: [push, pull_request]
+
+jobs:
+  test_FE:
+    name: Run tests for FRONTEND
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    
+    - name: Install Node.js dependencies
+      run: npm install
+
+    - name: Run linters and test for FRONTEND
+      run: |
+        cd ./ui
+        npm run lint
+        npm run test
