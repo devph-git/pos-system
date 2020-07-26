@@ -27,18 +27,18 @@ jobs:
   
   test_BE:
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_ROOT_PASSWORD: supersecret
-          MYSQL_DATABASE: point_of_sales
-          MYSQL_USER: root
-          MYSQL_PASSWORD: supersecret
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
+    # services:
+    #   mysql:
+    #     image: mysql:5.7
+    #     env:
+    #       MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    #       MYSQL_ROOT_PASSWORD: supersecret
+    #       MYSQL_DATABASE: point_of_sales
+    #       MYSQL_USER: root
+    #       MYSQL_PASSWORD: supersecret
+    #     ports:
+    #       - 3306:3306
+    #     options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
     steps:
     - name: Checkout source
       uses: actions/checkout@v2
@@ -50,6 +50,7 @@ jobs:
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: |
         cd ./api
+        mysql -uroot -proot -e "CREATE DATABASE point_of_sales;"
         php artisan key:generate
         php artisan migrate
         php artisan test
