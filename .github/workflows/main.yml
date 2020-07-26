@@ -21,11 +21,11 @@ jobs:
     
     - name: Install Node.js dependencies
       run: |
-        ls
         cd ./ui
         npm install
 
     - name: Run linters and test for FRONTEND
       run: |
+        ls
         npm run lint
         npm run test
