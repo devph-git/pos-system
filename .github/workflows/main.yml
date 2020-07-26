@@ -21,6 +21,7 @@ jobs:
     
     - name: Install Node.js dependencies
       run: |
+        ls
         cd ./ui
         npm install
 
