@@ -117,6 +117,7 @@
 
 <script>
 export default {
+  name: 'graphcontent',
   data () {
     return {
       intervals: {

@@ -2,23 +2,24 @@
   <div>
     <div v-if="false">
       <!-- LOGGED IN -->
+      <!-- Dashboard should put here -->
     </div>
     <div v-else class="loginPage">
-      <!-- LOGGING IN -->
-      <LoginImage />
-      <LoginForm />
+      <!-- LOGGED OUT -->
+      <loginimage />
+      <loginform />
     </div>
   </div>
 </template>
 
 <script>
-import LoginForm from '@/components/LoginForm'
-import LoginImage from '@/components/LoginImage'
+import loginform from '@/components/loginform'
+import loginimage from '@/components/loginimage'
 
 export default {
   components: {
-    LoginForm,
-    LoginImage
+    loginform,
+    loginimage
   },
   head () {
     return {

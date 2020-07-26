@@ -1,11 +1,11 @@
 import { shallowMount } from "@vue/test-utils";
-import BestSellingProduct from '@/components/BestSellingProduct.vue'
-import LoginForm from '@/components/LoginForm.vue'
-import dashboardIntroImage from '@/components/dashboardIntroImage.vue'
+import bestsellingproduct from '@/components/bestsellingproduct.vue'
+import loginform from '@/components/loginform.vue'
+import dashboardintroimage from '@/components/dashboardintroimage.vue'
 import graphcontent from '@/components/graphcontent.vue'
 import introforcontent from '@/components/introforcontent.vue'
-import LoginImage from '@/components/LoginImage.vue'
-import navigationDrawer from '@/components/navigationDrawer.vue'
+import loginimage from '@/components/loginimage.vue'
+import navigationdrawer from '@/components/navigationdrawer.vue'
 import sparklines from '@/components/sparklines.vue'
 import index from '@/pages/index.vue'
 import dashboard from '@/pages/dashboard.vue'
@@ -15,7 +15,7 @@ import dashboard from '@/pages/dashboard.vue'
 // BestSellingProduct Component
 describe('Testing BestSellingProduct', () => {
   test('Testing BestSellingProduct', () => {
-    const wrapper = shallowMount(BestSellingProduct)
+    const wrapper = shallowMount(bestsellingproduct)
     expect(wrapper).not.toBeNull()
   })
 })
@@ -23,7 +23,7 @@ describe('Testing BestSellingProduct', () => {
 // LoginForm Component
 describe('Testing LoginForm', () => {
   test('Testing LoginForm', () => {
-    const wrapper = shallowMount(LoginForm)
+    const wrapper = shallowMount(loginform)
     expect(wrapper).not.toBeNull()
   })
 })
@@ -31,7 +31,7 @@ describe('Testing LoginForm', () => {
 // LoginImage Component
 describe('Testing LoginImage', () => {
   test('Testing LoginImage', () => {
-    const wrapper = shallowMount(LoginImage)
+    const wrapper = shallowMount(loginimage)
     expect(wrapper).not.toBeNull()
   })
 })
@@ -39,7 +39,7 @@ describe('Testing LoginImage', () => {
 // dashboardIntroImage Component
 describe('Testing dashboardIntroImage', () => {
   test('Testing dashboardIntroImage', () => {
-    const wrapper = shallowMount(dashboardIntroImage)
+    const wrapper = shallowMount(dashboardintroimage)
     expect(wrapper).not.toBeNull()
   })
 })
@@ -63,7 +63,7 @@ describe('Testing introforcontent', () => {
 // navigationDrawer Component
 describe('Testing navigationDrawer', () => {
   test('Testing navigationDrawer', () => {
-    const wrapper = shallowMount(navigationDrawer)
+    const wrapper = shallowMount(navigationdrawer)
     expect(wrapper).not.toBeNull()
   })
 })

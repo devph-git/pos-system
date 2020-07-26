@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'DashboardIntroImage'
+  name: 'dashboardintroimage'
 }
 </script>
 

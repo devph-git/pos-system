@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'LoginImage'
+  name: 'loginimage'
 }
 </script>
 

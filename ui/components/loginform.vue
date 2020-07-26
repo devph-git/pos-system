@@ -58,7 +58,7 @@
 
 <script>
 export default {
-  name: 'LoginForm',
+  name: 'loginform',
   data () {
     return {
       userInfo: {

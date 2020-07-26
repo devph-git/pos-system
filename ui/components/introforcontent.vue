@@ -6,7 +6,7 @@
           :elevation="hover ? 20 : 6"
           class="row mx-auto pa-0"
         >
-          <dashboardIntroImage class="col-5" />
+          <dashboardintroimage class="col-5" />
           <div class="heading col-7 my-auto d-block">
             <p class="ma-0 pa-0">
               Welcome Back
@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import dashboardIntroImage from './dashboardIntroImage'
+import dashboardintroimage from './dashboardintroimage'
 
 export default {
-  name: 'ContentIntro',
+  name: 'introforcontent',
   components: {
-    dashboardIntroImage
+    dashboardintroimage
   }
 }
 </script>
