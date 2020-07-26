@@ -27,7 +27,7 @@ jobs:
   
   # NOTE: 
   # - mysql is already included in ubuntu-latest
-  # - ref: https://github.com/actions/virtual-environments/blob/master/images/linux/Ubuntu2004-README.md
+  # - ref: https://github.com/mirromutth/mysql-action/issues/2#issuecomment-537763992
   test_BE:
     runs-on: ubuntu-latest
     steps:
