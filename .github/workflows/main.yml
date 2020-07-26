@@ -20,10 +20,11 @@ jobs:
         node-version: 12
     
     - name: Install Node.js dependencies
-      run: npm install
+      run: |
+        cd ./ui
+        npm install
 
     - name: Run linters and test for FRONTEND
       run: |
-        cd ./ui
         npm run lint
         npm run test
