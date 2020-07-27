@@ -20,13 +20,13 @@ class ItemTest extends TestCase
             ->assertStatus(200)
             ->assertJsonStructure([
                 'Items'=>[
-                'id',
-                'user_id',
-                'name',
-                'amount',
-                'stocks_available',
-                'deleted_at',
-                    ],
+                    'id',
+                    'user_id',
+                    'name',
+                    'amount',
+                    'stocks_available',
+                    'deleted_at',
+                ],
             ]);
     }
 
@@ -52,7 +52,7 @@ class ItemTest extends TestCase
         return $this->json('POST','api/add',$item,['Accept'=>'application/json'])
             ->assertStatus(200)
             ->assertJson([
-               'message'=>'Insert Successfully',
+                'message'=>'Insert Successfully',
             ]);
     }
 
@@ -65,7 +65,7 @@ class ItemTest extends TestCase
         return $this->json('PUT', 'api/update/5',$itemData ,['Accept' => 'application/json'])
             ->assertStatus(200)
             ->assertJson([
-               "message"=>'Updated Successfully',
+                "message"=>'Updated Successfully',
             ]);
     }
 
