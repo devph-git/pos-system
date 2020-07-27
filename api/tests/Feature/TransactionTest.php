@@ -19,9 +19,9 @@ class TransactionTest extends TestCase
         return $this->json('GET','api/transactions',['Accept'=>'application/json'])
             ->assertStatus(200)
             ->assertJsonStructure([
-               'transactions'=>[
+                'transactions'=>[
 
-               ],
+                ],
             ]);
     }
     public function testshowTransaction()
@@ -32,13 +32,13 @@ class TransactionTest extends TestCase
         return $this->json('GET','api/transactions/show/1',['Accept'=>'application/json'])
             ->assertStatus(200)
             ->assertJsonStructure([
-                'Message',
-                'data'=>[
-                    'id:',
-                    'user_id:',
-                    'number:',
-                    'total_amount:',
-                    'created_at:',
+                "Message",
+                "data" =>[
+                    'id',
+                    'User_id',
+                    'number',
+                    'total_amount',
+                    'created_at',
                 ],
             ]);
     }
@@ -47,11 +47,11 @@ class TransactionTest extends TestCase
         $this->user = Passport::actingAs(
             factory(User::class)->create()
         );
-       $transaction = ['user_id'=>9,'number'=>'36912','total_amount'=>3000];
+        $transaction = ['user_id'=>9,'number'=>'36912','total_amount'=>3000];
         return $this->json('POST','api/transactions/create',$transaction,['Accept'=>'application/json'])
             ->assertStatus(200)
             ->assertJsonStructure([
-               'Message',
+                'Message',
                 'data'=>[
                     'user_id',
                     'number',
