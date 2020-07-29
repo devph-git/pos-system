@@ -29,7 +29,8 @@ class ItemsRepository implements ItemsRepositoryInterface{
       }
 
       public function show(int $id){
-          if($response = $this->items->find($id)){
+          $response = $this->items->find($id);
+          if($response){
             $data = ['Items' => $response];
             $statusCode = self::SUCESS_STATUS_CODE;
           }else{
@@ -57,8 +58,8 @@ class ItemsRepository implements ItemsRepositoryInterface{
           $statusCode = self::SUCESS_STATUS_CODE;
           return $this->response($data,$statusCode);
       }
-      public function update(Request $request,int $id){
-         $data['inputs'] =  $this->items->whereId($id)->update($request->all());
+      public function update(Request $request){
+         $data['inputs'] =  $this->items->update($request->all());
          $data = ['message'=>'Updated Successfully'];
          $statusCode = self::SUCESS_STATUS_CODE;
          return $this->response($data,$statusCode);

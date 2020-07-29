@@ -25,17 +25,17 @@ Route::group(['middleware' => 'auth:api'], function(){
  //user   
  Route::get('details', 'UserController@details');
  //items
- Route::post('add', 'ItemsController@store');
- Route::get('items', 'ItemsController@index');
- Route::get('show/{id}', 'ItemsController@show');
- Route::post('delete/{id}', 'ItemsController@delete');
- Route::put('update/{id}', 'ItemsController@update');
+ Route::post('add', 'ItemsController@store')->name('item.add');
+ Route::get('items', 'ItemsController@index')->name('item.all');
+ Route::get('show/{id}', 'ItemsController@show')->name('item.show');
+ Route::post('delete/{id}', 'ItemsController@delete')->name('item.delete');
+ Route::put('update/{id}', 'ItemsController@update')->name('item.update');
  //transaction
- Route::get('transactions','TransactionsController@index');
- Route::post('transactions/create','TransactionsController@store');
- Route::get('transactions/show/{id}','TransactionsController@show');
- Route::put('transactions/update/{id}','TransactionsController@update');
- Route::post('transactions/delete/{id}','TransactionsController@destroy');
+ Route::get('transactions','TransactionsController@index')->name('transaction.all');
+ Route::post('transactions/create','TransactionsController@store')->name('transaction.create');
+ Route::get('transactions/show/{id}','TransactionsController@show')->name('transaction.show');
+ Route::put('transactions/update/{id}','TransactionsController@update')->name('transaction.update');
+ Route::post('transactions/delete/{id}','TransactionsController@destroy')->name('transaction.delete');
  //transactionItem
  Route::get('transaction/items/','TransactionItemsController@index');
  Route::get('transaction/items/show/{id}','TransactionItemsController@show');
