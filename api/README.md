@@ -16,7 +16,7 @@
     # generate key for the application
     > php artisan key:generate
 
-    # in .env file, look and replace valid for all the variables that has a required value
+    # in .env file, replace all the required variables with a valid value.
     # assuming the required fields has been filled up in env file. you may now run migration
     > php artisan migrate
 
