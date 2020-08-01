@@ -54,6 +54,7 @@ jobs:
           chmod -R 777 storage bootstrap/cache
       - name: Execute tests
         env:
+          APP_URL: 127.0.0.1
           DB_CONNECTION: mysql
           DB_HOST: 127.0.0.1
           DB_DATABASE: point_of_sales
