@@ -55,7 +55,7 @@ jobs:
       - name: Execute tests
         env:
           DB_CONNECTION: mysql
-          DB_HOST: mysql_service
+          DB_HOST: 127.0.0.1
           DB_DATABASE: point_of_sales
           DB_PORT: 33306
           DB_USER: root
