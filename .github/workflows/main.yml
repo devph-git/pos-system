@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysql_service:
-        image: mysql:5.7
+        image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: supersecret
           MYSQL_DATABASE: point_of_sales
