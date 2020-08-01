@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Items;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Passport\Passport;
@@ -11,61 +12,73 @@ use Tests\TestCase;
 class ItemTest extends TestCase
 {
 
-    public function testshowItem()
+  use RefreshDatabase;
+
+  /** @test */
+    public function add_item()
     {
         $this->user = Passport::actingAs(
-            factory(User::class)->create()
+            factory(User::class)->make()
         );
-        return $this->json('GET', 'api/show/6',['Accept' => 'application/json'])
-            ->assertStatus(200)
-            ->assertJsonStructure([
-                'Items'=>[
-                    'id',
-                    'user_id',
-                    'name',
-                    'amount',
-                    'stocks_available',
-                    'deleted_at',
-                ],
-            ]);
-    }
-
-    public function testDeleteItem()
-    {
-        $this->user = Passport::actingAs(
-            factory(User::class)->create()
-        );
-
-        return $this->json('POST', 'api/delete/4',['Accept' => 'application/json'])
-            ->assertStatus(200)
-            ->assertJson([
-                "message"=>'Item Deleted',
-            ]);
-    }
-
-    public function testAdditem()
-    {
-        $this->user = Passport::actingAs(
-            factory(User::class)->create()
-        );
-        $item =['user_id'=>9,'name'=>'milk tea','amount'=>180,'stocks_available'=>'15'];
-        return $this->json('POST','api/add',$item,['Accept'=>'application/json'])
+        $items =['user_id'=>1,'name'=>'milk tea','amount'=>180,'stocks_available'=>'15'];
+        $this->json('POST',route('item.add',$items),['Accept'=>'application/json'])
             ->assertStatus(200)
             ->assertJson([
                 'message'=>'Insert Successfully',
             ]);
     }
 
-    public function testUpdate()
+    /** @test */
+    public function all_item()
     {
         $this->user = Passport::actingAs(
-            factory(User::class)->create()
+            factory(User::class)->make()
         );
-        $itemData = ['user_id'=>9,'name'=>'avacado milk tea','amount'=>150,'stocks_available'=>'30'];
-        return $this->json('PUT', 'api/update/5',$itemData ,['Accept' => 'application/json'])
+        $this->json('GET', route('item.all'),['Accept' => 'application/json'])
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'Items'=>[
+                ],
+            ]);
+    }
+   /** @test */
+    public function testgetItem()
+    {
+
+        $this->user = Passport::actingAs(
+            factory(User::class)->make()
+        );
+        $this->withExceptionHandling();
+        $item = factory(Items::class)->create();
+        $this->json('GET',route('item.show',$item->id),['Accept' => 'application/json'])
+        ->assertStatus(200);
+    }
+
+    /** @test */
+    public function update_item()
+    {
+        $this->user = Passport::actingAs(
+            factory(User::class)->make()
+        );
+        $itemData = ['user_id'=>1,'name'=>'avacado milk tea','amount'=>150,'stocks_available'=>'30'];
+        return $this->json('PUT', route('item.update',1),$itemData ,['Accept' => 'application/json'])
             ->assertStatus(200)
             ->assertJson([
-                "message"=>'Updated Successfully',
+               "message"=>'Updated Successfully',
+            ]);
+    }
+
+   /** @test  */
+    public function delete_item()
+    {
+        $this->user = Passport::actingAs(
+            factory(User::class)->make()
+        );
+
+         $this->json('POST', route('item.delete',1),['Accept' => 'application/json'])
+            ->assertStatus(200)
+            ->assertJson([
+                "message"=>'Item Deleted',
             ]);
     }
 

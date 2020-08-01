@@ -5,10 +5,12 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-
+use Laravel\Passport\Passport;
+use App\User;
 class UserTest extends TestCase
 {
-   
+    use RefreshDatabase;
+
     public function successRegister()
     {
         $userData = [
@@ -68,20 +70,21 @@ class UserTest extends TestCase
                 "password" => ["The password field is required."],
         ]);
     }
-    
     public function testlogin()
     {
-        $userData = [
-            "email" => "jericonacario@yahoo.com",
-            "password" => "jerico005",
-        ];
-
-        return $this->json('POST', 'api/login', $userData, ['Accept' => 'application/json'])
+        $this->user =
+            factory(User::class)->create([
+                'email' => 'sample@test.com',
+                'password' => bcrypt('ekko1211'),
+            ]);
+        $data = ['email' => 'sample@test.com','password' => 'ekko1211'];
+         $this->json('POST', 'api/login',$data, ['Accept' => 'application/json'])
             ->assertStatus(200)
             ->assertJsonStructure([
                 "user" => [
                     'name',
                     'email',
+                    'email_verified_at',
                     'created_at',
                     'updated_at',
                 ],
