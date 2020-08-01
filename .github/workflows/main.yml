@@ -1,0 +1,68 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Sanitize BE and FE
+
+# Trigger jobs on...
+on: [push, pull_request]
+
+jobs:
+  test_FE:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - name: Install Node.js dependencies
+      run: |
+        cd ./ui
+        npm install
+    - name: Run linters and test for FRONTEND
+      run: |
+        cd ./ui
+        npm run lint
+        npm run test
+  
+  # NOTE: 
+  # - mysql is already included in ubuntu-latest
+  # - ref: https://github.com/mirromutth/mysql-action/issues/2#issuecomment-537763992
+  test_BE:
+    runs-on: ubuntu-latest
+    services:
+      mysql_service:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: supersecret
+          MYSQL_DATABASE: point_of_sales
+        ports:
+          - 33306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+    steps:
+      - uses: actions/checkout@v2
+      - name: Laravel Setup
+        run: |
+          cd api
+          cp .env.example .env
+          composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+          php artisan key:generate
+          chmod -R 777 storage bootstrap/cache
+      - name: Execute tests
+        env:
+          APP_URL: http://127.0.0.1:8000/
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_DATABASE: point_of_sales
+          DB_PORT: 33306
+          DB_USER: root
+          DB_PASSWORD: supersecret
+        run: |
+          cd api
+          php artisan migrate
+          php artisan config:cache
+          php artisan test

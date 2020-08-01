@@ -16,7 +16,7 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('User_id');
-            $table->string('name',191);
+            $table->integer('number');
             $table->float('total_amount');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
