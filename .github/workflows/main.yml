@@ -65,5 +65,4 @@ jobs:
           cd api
           php artisan migrate
           php artisan config:cache
-          vendor/bin/phpunit --version
-          vendor/bin/phpunit
+          php artisan test
