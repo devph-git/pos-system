@@ -60,7 +60,6 @@ jobs:
           DB_USER: root
           DB_PASSWORD: supersecret
         run: |
-          cd ./api
           php artisan migrate
           vendor/bin/phpunit --version
           vendor/bin/phpunit
