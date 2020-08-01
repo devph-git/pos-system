@@ -35,12 +35,11 @@ jobs:
       uses: actions/checkout@v2
     - name: Prepare .env and dependencies
       run: |
+        sudo systemctl start mysql.service
+        mysql -uroot -proot -e "CREATE DATABASE point_of_sales;"
         cd ./api
         php -r "file_exists('.env') || copy('.env.example', '.env');"
         composer install
-        sudo systemctl start mysql.service
-        mysql -uroot -proot -e "CREATE DATABASE point_of_sales;"
         php artisan migrate
         php artisan passport:install
-        php artisan key:generate
         php artisan test
