@@ -30,7 +30,7 @@
 import dashboardintroimage from './dashboardintroimage'
 
 export default {
-  name: 'introforcontent',
+  name: 'Introforcontent',
   components: {
     dashboardintroimage
   }

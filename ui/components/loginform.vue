@@ -58,7 +58,7 @@
 
 <script>
 export default {
-  name: 'loginform',
+  name: 'Loginform',
   data () {
     return {
       userInfo: {

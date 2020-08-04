@@ -6,20 +6,26 @@
     </div>
     <div v-else class="loginPage">
       <!-- LOGGED OUT -->
-      <loginimage />
-      <loginform />
+      <v-row>
+        <v-col lg="7" md="6" sm="12">
+          <loginimagetest />
+        </v-col>
+        <v-col>
+          <loginform />
+        </v-col>
+      </v-row>
     </div>
   </div>
 </template>
 
 <script>
 import loginform from '@/components/loginform'
-import loginimage from '@/components/loginimage'
+import loginimagetest from '@/components/loginimagetest'
 
 export default {
   components: {
     loginform,
-    loginimage
+    loginimagetest
   },
   head () {
     return {

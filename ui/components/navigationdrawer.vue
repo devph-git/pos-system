@@ -74,7 +74,7 @@
 
 <script>
 export default {
-  name: 'navigationdrawer',
+  name: 'Navigationdrawer',
   props: ['currentPage'],
   data () {
     return {

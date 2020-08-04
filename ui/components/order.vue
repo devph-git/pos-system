@@ -5,10 +5,18 @@
         <template v-slot:default>
           <thead>
             <tr>
-              <th class="text-left">Item</th>
-              <th class="text-left">Quantity</th>
-              <th class="text-left">Price</th>
-              <th class="text-left">Delete</th>
+              <th class="text-left">
+                Item
+              </th>
+              <th class="text-left">
+                Quantity
+              </th>
+              <th class="text-left">
+                Price
+              </th>
+              <th class="text-left">
+                Delete
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -25,7 +33,8 @@
                   class="ma-0 pa-0"
                   width="1"
                   x-small
-                  color="'#2c2c54'">
+                  color="'#2c2c54'"
+                >
                   <v-icon>mdi-minus</v-icon>
                 </v-btn>
                 <span class="pa-1">{{ item.quantity }}</span>
@@ -34,17 +43,21 @@
                   class="ma-0 pa-0"
                   width="1"
                   x-small
-                  color="'#2c2c54'">
+                  color="'#2c2c54'"
+                >
                   <v-icon>mdi-plus</v-icon>
                 </v-btn>
               </td>
-              <td class="pa-0 text-center">${{ item.price }}</td>
+              <td class="pa-0 text-center">
+                ${{ item.price }}
+              </td>
               <td>
                 <v-btn
                   class="ma-0 pa-0"
                   text
                   icon
-                  color="red lighten-2">
+                  color="red lighten-2"
+                >
                   <v-icon>mdi-trash-can</v-icon>
                 </v-btn>
               </td>
@@ -58,19 +71,27 @@
       <table class="container">
         <tr>
           <td>Tax</td>
-          <td class="text-right font-weight-thin">10%</td>
+          <td class="text-right font-weight-thin">
+            10%
+          </td>
         </tr>
         <tr>
           <td>Discount</td>
-          <td class="text-right font-weight-thin">0%</td>
+          <td class="text-right font-weight-thin">
+            0%
+          </td>
         </tr>
         <tr>
           <td>Sub Total</td>
-          <td class="text-right font-weight-bold">$200.00</td>
+          <td class="text-right font-weight-bold">
+            $200.00
+          </td>
         </tr>
         <tr>
           <td>Total</td>
-          <td class="text-right font-weight-bold">$200.00</td>
+          <td class="text-right font-weight-bold">
+            $200.00
+          </td>
         </tr>
       </table>
       <div class="row px-4">
@@ -79,7 +100,9 @@
           color="#e5e9ed"
           dark
         >
-          <v-icon color="red darken-1">mdi-close-circle</v-icon>
+          <v-icon color="red darken-1">
+            mdi-close-circle
+          </v-icon>
           <span class="order-button">Cancel</span>
         </v-btn>
         <v-btn
@@ -98,7 +121,7 @@
 
 <script>
 export default {
-  name: 'order',
+  name: 'Order',
   data () {
     return {
       desserts: [
