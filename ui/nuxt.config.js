@@ -110,7 +110,7 @@ export default {
           login: { url: '/session', method: 'post', propertyName: 'token' },
           logout: { url: '/auth/logout', method: 'post' },
           user: { url: '/session/user', method: 'get', propertyName: 'user' }
-        },
+        }
         // tokenRequired: true,
         // tokenType: 'bearer',
         // globalToken: true,

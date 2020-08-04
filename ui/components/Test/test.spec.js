@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount } from '@vue/test-utils'
 import bestsellingproduct from '@/components/bestsellingproduct.vue'
 import loginform from '@/components/loginform.vue'
 import dashboardintroimage from '@/components/dashboardintroimage.vue'
@@ -10,7 +10,7 @@ import sparklines from '@/components/sparklines.vue'
 import index from '@/pages/index.vue'
 import dashboard from '@/pages/dashboard.vue'
 
-///////////////////////////////////COMPONENT//////////////////////////////////////////////
+// /////////////////////////////////COMPONENT//////////////////////////////////////////////
 
 // BestSellingProduct Component
 describe('Testing BestSellingProduct', () => {
@@ -76,7 +76,7 @@ describe('Testing sparklines', () => {
   })
 })
 
-//////////////////////////////////////////PAGES////////////////////////////////////////////
+// ////////////////////////////////////////PAGES////////////////////////////////////////////
 
 // index Component
 describe('Testing index', () => {

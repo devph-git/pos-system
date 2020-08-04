@@ -249,8 +249,8 @@ class ItemsController extends Controller
      *)
      **/
     
-    public function update(ItemRequest $request,int $id){
-      $response = $this->itemsRepository->update($request,$id);
+    public function update(ItemRequest $request){
+      $response = $this->itemsRepository->update($request);
       return response()->json($response['data'],$response['statusCode']);
    }
 
