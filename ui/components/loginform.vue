@@ -39,8 +39,8 @@
       </v-row>
       <v-btn
         block
-        :disabled="userInfo.email.length > 8 && userInfo.password.length > 8 ? false : true"
-        :depressed="userInfo.email.length > 8 && userInfo.password.length > 8 ? false : true"
+        :disabled="userInfo.email.length > 8 && userInfo.password.length >= 8 ? false : true"
+        :depressed="userInfo.email.length > 8 && userInfo.password.length >= 8 ? false : true"
         type="submit"
         color="#3889BE"
         :dark="userInfo.email.length > 8 && userInfo.password.length > 8 ? true : false"
@@ -79,7 +79,7 @@ export default {
   methods: {
     async getData () {
       try {
-        await this.$auth.loginWith('local', { data: this.userInfo })
+        await this.$auth.loginWith('local', { params: this.userInfo })
       } catch (err) {
         console.log(err)
       }
