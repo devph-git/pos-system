@@ -1,6 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  router: {
+    middleware: ['auth-guard']
+  },
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -64,7 +67,9 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:8000'
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -107,15 +112,24 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/session', method: 'post', propertyName: 'token' },
-          logout: { url: '/auth/logout', method: 'post' },
-          user: { url: '/session/user', method: 'get', propertyName: 'user' }
+          login: { url: '/api/login', method: 'post', propertyName: 'access_token' },
+          logout: { url: '/api/login', method: 'delete' },
+          user: { url: '/api/details', method: 'get', propertyName: false }
         }
         // tokenRequired: true,
-        // tokenType: 'bearer',
+        // tokenType: 'bearer'
         // globalToken: true,
         // autoFetchUser: true
       }
     }
   }
+  // auth: {
+  //   strategies: {
+  //       'laravel.passport': {
+  //         url: 'http://localhost:8000/docs/api-docs.json',
+  //         client_id: '3',
+  //         client_secret: 'T2AQ8tYeBXsypO0nhCvRXMEgoYQhajQAw1ouDjjU'
+  //       },
+  //   }
+  // }
 }

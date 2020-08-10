@@ -1,16 +1,17 @@
 <template>
   <div class="container">
     <h1>Welcome</h1>
+    {{ $auth.loggedIn }}
     <p>Sign in to your account</p>
     <form class="form" @submit.prevent="getData">
       <!-- <input v-model="userInfo.username" type="text" placeholder="Username"> -->
       <!-- USERNAME INPUT -->
       <v-text-field
-        v-model="userInfo.username"
+        v-model="userInfo.email"
         outlined
         :rules="[rules.required, rules.min]"
         name="input-10-1"
-        label="Username"
+        label="Email"
         hint="At least 8 characters"
         prepend-inner-icon="mdi-account"
         @click:append="show1 = !show1"
@@ -38,11 +39,11 @@
       </v-row>
       <v-btn
         block
-        :disabled="userInfo.username.length > 8 && userInfo.password.length > 8 ? false : true"
-        :depressed="userInfo.username.length > 8 && userInfo.password.length > 8 ? false : true"
+        :disabled="userInfo.email.length > 8 && userInfo.password.length > 8 ? false : true"
+        :depressed="userInfo.email.length > 8 && userInfo.password.length > 8 ? false : true"
         type="submit"
         color="#3889BE"
-        :dark="userInfo.username.length > 8 && userInfo.password.length > 8 ? true : false"
+        :dark="userInfo.email.length > 8 && userInfo.password.length > 8 ? true : false"
       >
         LOGIN
       </v-btn>
@@ -62,15 +63,15 @@ export default {
   data () {
     return {
       userInfo: {
-        username: '',
+        email: '',
         password: ''
       },
-      // Script for vuetify
+      // Script on vuetify
       show1: false,
       rules: {
         required: value => !!value || 'Required.',
         min: v => v.length >= 8 || 'Min 8 characters',
-        emailMatch: () => ('The username and password you entered don\'t match')
+        emailMatch: () => ('The email and password you entered don\'t match')
       }
       //
     }
@@ -79,9 +80,8 @@ export default {
     async getData () {
       try {
         await this.$auth.loginWith('local', { data: this.userInfo })
-        // console.log(response)
       } catch (err) {
-        // console.log(err)
+        console.log(err)
       }
     }
   }
@@ -122,6 +122,4 @@ export default {
   text-align: center;
 }
 .community-name {
-  margin-top: 20%;
-}
-</style>
+  ma

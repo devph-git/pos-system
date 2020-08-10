@@ -1,35 +1,44 @@
 <template>
-  <div>
-    <div v-if="false">
-      <!-- LOGGED IN -->
-      <!-- Dashboard should put here -->
-    </div>
-    <div v-else class="loginPage">
-      <!-- LOGGED OUT -->
-      <v-row>
-        <v-col lg="7" md="6" sm="12">
-          <loginimagetest />
-        </v-col>
-        <v-col>
-          <loginform />
-        </v-col>
-      </v-row>
-    </div>
-  </div>
+  <v-app>
+    <navigationdrawer :current-page="'dashboard'" />
+    <v-app-bar app>
+      <!-- -->
+    </v-app-bar>
+    <v-main class="bgColor">
+      <v-container fluid>
+        <introforcontent />
+      </v-container>
+      <v-container>
+        <graphcontent />
+      </v-container>
+      <v-container>
+        <sparklines />
+      </v-container>
+      <v-container>
+        <bestsellingproduct />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import loginform from '@/components/loginform'
-import loginimagetest from '@/components/loginimagetest'
+import introforcontent from '@/components/introforcontent'
+import navigationdrawer from '@/components/navigationdrawer'
+import graphcontent from '@/components/graphcontent'
+import sparklines from '@/components/sparklines'
+import bestsellingproduct from '@/components/bestsellingproduct'
 
 export default {
   components: {
-    loginform,
-    loginimagetest
+    navigationdrawer,
+    introforcontent,
+    graphcontent,
+    sparklines,
+    bestsellingproduct
   },
   head () {
     return {
-      title: 'Login',
+      title: 'Dashboard',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -40,12 +49,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.loginPage {
-  display: flex;
-  margin: auto;
-  margin-top: 8%;
-  width: 90%;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+<style>
+.bgColor {
+  background-color: #ebeff3;
 }
 </style>

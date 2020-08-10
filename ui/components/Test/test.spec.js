@@ -8,7 +8,7 @@ import loginimage from '@/components/loginimage.vue'
 import navigationdrawer from '@/components/navigationdrawer.vue'
 import sparklines from '@/components/sparklines.vue'
 import index from '@/pages/index.vue'
-import dashboard from '@/pages/dashboard.vue'
+import index from '@/pages/index.vue'
 
 // /////////////////////////////////COMPONENT//////////////////////////////////////////////
 
@@ -86,10 +86,10 @@ describe('Testing index', () => {
   })
 })
 
-// dashboard Component
-describe('Testing dashboard', () => {
-  test('Testing dashboard', () => {
-    const wrapper = shallowMount(dashboard)
+// index Component
+describe('Testing index', () => {
+  test('Testing index', () => {
+    const wrapper = shallowMount(index)
     expect(wrapper).not.toBeNull()
   })
 })

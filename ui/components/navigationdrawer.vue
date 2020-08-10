@@ -2,12 +2,12 @@
   <v-navigation-drawer :color="'drawerColor'" app permanent>
     <!--NAV DRAWER -->
     <v-list class="navList mt-5">
-      <v-list-item :class="currentPage==='dashboard'?'clicked':''" @click.prevent="">
+      <v-list-item :class="currentPage===''?'clicked':''" @click.prevent="">
         <v-list-item-icon>
           <v-icon v-text="icon" />
         </v-list-item-icon>
         <v-list-item-content>
-          <nuxt-link to="/dashboard">
+          <nuxt-link to="/">
             <v-list-item-title class="title">
               Dashboard
             </v-list-item-title>
@@ -60,7 +60,7 @@
           </nuxt-link>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item @click.prevent="">
+      <v-list-item @click.prevent="$auth.logout()">
         <v-list-item-icon>
           <v-icon color="'drawerColor'" v-text="nav.logout.icon" />
         </v-list-item-icon>
