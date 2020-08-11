@@ -2,7 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   router: {
-    middleware: ['auth-guard']
+    middleware: ['auth']
   },
   /*
   ** Nuxt rendering mode
@@ -109,6 +109,10 @@ export default {
     }
   },
   auth: {
+    redirect: {
+      login: '/loginpage',
+      home: '/'
+    },
     strategies: {
       local: {
         endpoints: {
