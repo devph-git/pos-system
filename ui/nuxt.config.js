@@ -110,14 +110,15 @@ export default {
   },
   auth: {
     redirect: {
-      login: '/loginpage',
-      home: '/'
+      login: '/login',
+      home: '/',
+      logout: 'login'
     },
     strategies: {
       local: {
         endpoints: {
           login: { url: '/api/login', method: 'post', propertyName: 'access_token' },
-          logout: { url: '/api/login', method: 'delete' },
+          logout: { url: '/api/logout', method: 'post' },
           user: { url: '/api/details', method: 'get', propertyName: false }
         }
         // tokenRequired: true,
