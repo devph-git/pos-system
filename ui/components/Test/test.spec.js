@@ -8,7 +8,6 @@ import loginimage from '@/components/loginimage.vue'
 import navigationdrawer from '@/components/navigationdrawer.vue'
 import sparklines from '@/components/sparklines.vue'
 import index from '@/pages/index.vue'
-import index from '@/pages/index.vue'
 
 // /////////////////////////////////COMPONENT//////////////////////////////////////////////
 

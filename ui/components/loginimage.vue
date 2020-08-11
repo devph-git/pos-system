@@ -265,7 +265,7 @@
 
 <script>
 export default {
-  name: 'Loginimagetest'
+  name: 'Loginimage'
 }
 </script>
 

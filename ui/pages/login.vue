@@ -4,7 +4,7 @@
       <!-- LOGGED OUT -->
       <v-row>
         <v-col lg="7" md="6" sm="12">
-          <loginimagetest />
+          <loginimage />
         </v-col>
         <v-col>
           <loginform />
@@ -16,12 +16,12 @@
 
 <script>
 import loginform from '@/components/loginform'
-import loginimagetest from '@/components/loginimagetest'
+import loginimage from '@/components/loginimage'
 
 export default {
   components: {
     loginform,
-    loginimagetest
+    loginimage
   },
   head () {
     return {

@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h1>Welcome</h1>
-    {{ $auth.loggedIn }}
     <p>Sign in to your account</p>
     <form class="form" @submit.prevent="getData">
       <!-- <input v-model="userInfo.username" type="text" placeholder="Username"> -->
@@ -39,8 +38,8 @@
       </v-row>
       <v-btn
         block
-        :disabled="userInfo.email.length > 8 && userInfo.password.length >= 8 ? false : true"
-        :depressed="userInfo.email.length > 8 && userInfo.password.length >= 8 ? false : true"
+        :disabled="userInfo.email.length > 8 && userInfo.password.length > 8 ? false : true"
+        :depressed="userInfo.email.length > 8 && userInfo.password.length > 8 ? false : true"
         type="submit"
         color="#3889BE"
         :dark="userInfo.email.length > 8 && userInfo.password.length > 8 ? true : false"
@@ -122,4 +121,6 @@ export default {
   text-align: center;
 }
 .community-name {
-  ma
+  margin-top: 20%;
+}
+</style>
