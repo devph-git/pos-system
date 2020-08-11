@@ -78,7 +78,8 @@ export default {
   methods: {
     async getData () {
       try {
-        await this.$auth.loginWith('local', { params: this.userInfo })
+        const response = await this.$auth.loginWith('local', { params: this.userInfo })
+        console.log(response)
       } catch (err) {
         console.log(err)
       }
