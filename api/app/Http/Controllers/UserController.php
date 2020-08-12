@@ -164,7 +164,37 @@ class UserController extends Controller
         return response($response["data"] ,$response["statusCode"]); 
     } 
     
-   
+  /**
+     * @OA\POST(
+     *      path="/api/logout",
+     *      operationId="logout",
+     *      tags={"Logout User"},
+     * security={
+     *  {"passport": {}},
+     *   },
+     *      summary="Logout user",
+     *      description="Revoke Token of user currently logged in",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
+     */
 
     public function logout(Request $request){
         $response = $this->userRepository->logout($request);
