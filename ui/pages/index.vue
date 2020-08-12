@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style>
-.bgColor {
-  background-color: #ebeff3;
-}
+  .bgColor {
+    background-color: #ebeff3;
+  }
 </style>

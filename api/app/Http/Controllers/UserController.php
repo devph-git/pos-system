@@ -164,6 +164,7 @@ class UserController extends Controller
         return response($response["data"] ,$response["statusCode"]); 
     } 
     
+<<<<<<< HEAD
       /**
      * @OA\POST(
      *      path="/api/logout",
@@ -174,6 +175,18 @@ class UserController extends Controller
      *   },
      *      summary="Logout user ",
      *      description="Logout user from system",
+=======
+  /**
+     * @OA\POST(
+     *      path="/api/logout",
+     *      operationId="logout",
+     *      tags={"Logout User"},
+     * security={
+     *  {"passport": {}},
+     *   },
+     *      summary="Logout user",
+     *      description="Revoke Token of user currently logged in",
+>>>>>>> 1a98453cee9e5cb93a54c304f6774c6870e2af60
      *      @OA\Response(
      *          response=200,
      *          description="Successful operation",
@@ -195,7 +208,10 @@ class UserController extends Controller
      *   ),
      *  )
      */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a98453cee9e5cb93a54c304f6774c6870e2af60
 
     public function logout(Request $request){
         $response = $this->userRepository->logout($request);

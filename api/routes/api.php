@@ -16,15 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
-Route::post('logout', 'UserController@logout');
-Route::get('getItems/{id}','ItemsController@calculateDiscount');
-Route::get('transaction/total_price/{id}','TransactionsController@totalAmount');
-Route::post('transaction/search','ItemsController@searchItem');
 
 Route::group(['middleware' => 'auth:api'], function(){
  //user   
+ Route::post('logout', 'UserController@logout');
  Route::get('details', 'UserController@details');
  //items
+ Route::get('getItems/{id}','ItemsController@calculateDiscount');
  Route::post('add', 'ItemsController@store')->name('item.add');
  Route::get('items', 'ItemsController@index')->name('item.all');
  Route::get('show/{id}', 'ItemsController@show')->name('item.show');
@@ -42,4 +40,6 @@ Route::group(['middleware' => 'auth:api'], function(){
  Route::post('transaction/items/create','TransactionItemsController@store');
  Route::put('transaction/items/update/{id}','TransactionItemsController@update');
  Route::post('transaction/items/delete/{id}','TransactionItemsController@destroy');
+ Route::get('transaction/total_price/{id}','TransactionsController@totalAmount');
+ Route::post('transaction/search','ItemsController@searchItem');
 });
