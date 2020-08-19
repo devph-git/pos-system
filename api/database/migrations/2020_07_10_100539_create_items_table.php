@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('name',191);
             $table->float('amount');
             $table->integer('stocks_available');
+            $table->string('image',191);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
