@@ -10,7 +10,7 @@ interface ItemsRepositoryInterface
     public function show(int $id);
     public function delete(int $id);
     public function store(Request $request);
-    public function update(Request $request);
+    public function update(Request $request,int $id);
     public function discount(int $id);
     public function search(Request $request);
 }
