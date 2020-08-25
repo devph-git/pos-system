@@ -29,10 +29,10 @@
 
         <v-list-item
           class="ml-3"
-          :class="currentPage==='add-new-category'?'clicked':''"
+          :class="currentPage==='addnewcategory'?'clicked':''"
           @click.prevent=""
         >
-          <nuxt-link to="/add-new-category">
+          <nuxt-link to="/addnewcategory">
             <v-list-item-content>
               <v-list-item-title v-text="item.add_new_category.title" />
             </v-list-item-content>
@@ -40,10 +40,10 @@
         </v-list-item>
         <v-list-item
           class="ml-3"
-          :class="currentPage==='view-category-list'?'clicked':''"
+          :class="currentPage==='viewcategorylist'?'clicked':''"
           @click.prevent=""
         >
-          <nuxt-link to="/view-category-list">
+          <nuxt-link to="/viewcategorylist">
             <v-list-item-content>
               <v-list-item-title v-text="item.view_category_list.title" />
             </v-list-item-content>
