@@ -11,10 +11,10 @@ class ItemRequest extends FormRequest {
 
     public function rules() {
         return [
-            'id' =>'1',
             'name' => 'required',
             'amount' => 'required',
             'stocks_available' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg',
           ];
     }
 

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use App\Repositories\Items\ItemsRepositoryInterface;
 
+
 class ItemsRepository implements ItemsRepositoryInterface{
  
       const SUCESS_STATUS_CODE = 200;
@@ -52,16 +53,23 @@ class ItemsRepository implements ItemsRepositoryInterface{
       }
 
       public function store(Request $request){
-          $input = $request->all();
-          $data =  $this->items->create($input);
-          $data = ['message'=>'Insert Successfully'];
-          $statusCode = self::SUCESS_STATUS_CODE;
+            $input = $request->all();
+            $image = $request->file('image');
+            $input['image'] = $image->getClientOriginalName();
+            $image->move(public_path('uploads'),$image->getClientOriginalName());
+            $data =  $this->items->create($input);
+            $data = ['message'=>'Insert Successfully'];
+            $statusCode = self::SUCESS_STATUS_CODE;
           return $this->response($data,$statusCode);
       }
-      public function update(Request $request){
-         $data['inputs'] =  $this->items->update($request->all());
-         $data = ['message'=>'Updated Successfully'];
-         $statusCode = self::SUCESS_STATUS_CODE;
+      public function update(Request $request,int $id){
+          $input = $request->all();
+          $image = $request->file('image');
+          $input['image'] = $image->getClientOriginalName();
+          $image->move(public_path('uploads'),$image->getClientOriginalName());
+          $this->items->whereId($id)->update($input);
+          $data = ['message'=>'Updated Successfully'];
+          $statusCode = self::SUCESS_STATUS_CODE;
          return $this->response($data,$statusCode);
       }
 
@@ -95,6 +103,7 @@ class ItemsRepository implements ItemsRepositoryInterface{
          $data = ['data'=>$items];
          return $this->response($data,self::SUCESS_STATUS_CODE);
       }
+
 
       public function response($data, int $statusCode) {
         $response = ["data"=>$data, "statusCode"=>$statusCode];
